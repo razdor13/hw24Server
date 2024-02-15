@@ -6,9 +6,9 @@ const input = document.querySelector('input');
 const haveChild = userInputConteiner.children.length > 0
 
 
-async function validation(input) {
+async function  getStat(input) {
     
-    const something = await fetch('http://localhost:5500/gg', {
+    const something = await fetch('http://localhost:5500/stat', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -33,5 +33,5 @@ async function validation(input) {
 
 
 button.addEventListener('click',()=>{
-    validation(input)
+    getStat(input)
 })

@@ -5,7 +5,7 @@ import { fileURLToPath } from "url";
 
 function getUniqWordsInMap(input) {
     // рядок перетворюємо до масива
-    const separeteInArrey = input.split(" ").filter(Boolean);
+    const separeteInArrey = input.toLowerCase().split(" ").filter(Boolean);
 
     // проходимось по масиву та складаємо в new map
     return separeteInArrey.reduce((prev, word) => {
@@ -28,7 +28,7 @@ server.register(fastifyStatic,{
     root: path.join(__dirname, '../client')
 })
 
-server.post('/gg', async (request, reply) => {
+server.post('/stat', async (request, reply) => {
     // Отримання даних POST-запиту
     const data = request.body;
     // Обробка даних
